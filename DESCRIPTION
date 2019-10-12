@@ -1,11 +1,21 @@
 Package: PopGenUtils
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A collection of useful functions to deal with genetic data in R
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Nikolaos Tourvas
+Maintainer: Nikolaos Tourvas <nikostourvas@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    dplyr,
+    tidyr,
+    reshape2,
+    ggplot2,
+    adegenet,
+    popprxl,
+    pegas,
+    hierfstat,
+    tidyverse
