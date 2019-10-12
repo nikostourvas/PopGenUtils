@@ -12,10 +12,11 @@ LazyData: true
 Imports: 
     dplyr,
     tidyr,
+    magrittr,
     reshape2,
     ggplot2,
     adegenet,
     popprxl,
     pegas,
-    hierfstat,
-    tidyverse
+    hierfstat
+RoxygenNote: 6.1.1
