@@ -9,17 +9,27 @@
 #' @return a single csv file or a data.frame
 #' @export
 #'
+#' @author Nikolaos Tourvas
+#' @description This function allows the user to quickly convert multiple txt
+#' files of SSR genotyping data from GeneMapper v4.1 to a csv or a data.frame.
+#'
 #' @examples
+#' \dontrun{
 #'
 #' # Export csv file for use in GenAlEx
-#' genemapper2df(folder_name = "...",
-#'               export_name = "my_data",
-#'               export_option = "csv")
+#' genemapper2df(folder_name = "...", export_name = "my_data", export_option = "csv")
 #'
 #' # Create genind object
 #' df <- genemapper2df(folder_name = "...", export_option = "R")
 #' obj <- loci2genind(as.loci(df))
 #'
+#' # For genind objects you will probably want to import population data as well.
+#' # This can be done in the following way.
+#'
+#' strata(obj) <- strata_df    #provide a data.frame with population strata (e.g. Year, Plot)
+#' setPop(obj) <- ~Year/Plot    #set the appropriate population hierachy for the analysis
+#' ## Note that you can change population hierarchy between analyses using the previous command.
+#' }
 #' @import dplyr
 #' @import tidyr
 #' @importFrom magrittr %>%
