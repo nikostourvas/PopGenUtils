@@ -56,6 +56,15 @@ temp <- list.files(path = folder_name,
 df <- lapply(temp, read.csv, sep = "\t",
                na.strings = "")
 
+# Check if all input files are tab delimited
+for (i in 1:length(df)){
+  if(ncol(df[[i]]) < 3) {
+    stop(call. = FALSE,
+         "The input file is probably not tab delimited for marker",
+         unique(df[[i]]$Marker))
+  }
+}
+
 # Check if all alleles are coded as numbers
 for (i in 1:length(df)){
   if(!is.numeric(df[[i]]$Allele.1)) {
