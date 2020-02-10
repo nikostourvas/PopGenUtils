@@ -2,13 +2,11 @@
 
 The *PopGenUtils* package is developed as a way to document a collection of helper functions for the analysis of population genetics data. Currently at ALPHA stage.
 
-The only useful function at this point is called genemapper2df. You can check it out by typing 
+What can this package do?
 
-```
-?genemapper2df
-```
+- It can be used to create a GenAlEx formatted file or a genind object from multiple GeneMapper txt files  
+- It can also calculate Probability of Identity (PID) & PIDsibs, which are useful statistics in forensic DNA analysis.
 
-in the R console
 
 ## To install the development version of *PopGenUtils*
 

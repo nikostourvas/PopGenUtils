@@ -1,12 +1,11 @@
 Package: PopGenUtils
 Type: Package
 Title: A collection of useful functions to deal with genetic data in R
-Version: 0.1.0
+Version: 0.1.1.9001
 Author: Nikolaos Tourvas
 Maintainer: Nikolaos Tourvas <nikostourvas@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: This package can be used to create a GenAlEx formatted file or a genind object from multiple GeneMapper txt files. It can also be used to calculate Probability of Identity (PID) & PIDsibs, which are useful statistics in forensic DNA analysis.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
