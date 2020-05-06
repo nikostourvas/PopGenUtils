@@ -1,5 +1,18 @@
-pic_calc <- function(obj){
-  # GENIND 2 POLYSAT
+#' Convert a genind object to a genambig object
+#'
+#' @param obj a genind object
+#'
+#' @return a genambig object
+#' @export
+#'
+#' @author Nikolaos Tourvas
+#' @describeIn This function allows the user to convert a genind object to a
+#' genambig object for analyses using the package polysat.
+#'
+#' @import tidyr
+#' @import polysat
+#' @import pegas
+genind2genambig <- function(obj){
   obj_df <- as.loci(obj)
   obj_df <- obj_df[,-1]
   obj_df$Sample.Name <- rownames(obj_df)
@@ -23,16 +36,5 @@ pic_calc <- function(obj){
   PopInfo(obj_genambig) <- rep(1, nInd(obj))
   Ploidies(obj_genambig) <- rep(2, nInd(obj))
 
-  freq_obj <- simpleFreq(obj_genambig)
-  pic_obj <- PIC(freq_obj, overall = F)
-
-  pic_obj <- as.data.frame(pic_obj)
-  pic_obj_mean <- pic_obj %>%
-    rowMeans()
-
-  pic_obj$mean <- pic_obj_mean
-
-  pic_obj <- as.data.frame(t(as.matrix(pic_obj)))
-
-  return(pic_obj)
+  return(obj_genambig)
 }

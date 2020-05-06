@@ -9,7 +9,6 @@
 #' @describeIn This function allows the user to produce to summary table
 #' similar to the one produced by the software GenAlEx.
 #'
-#' @examples
 #' @import poppr
 #' @import hierfstat
 #' @import reshape2
@@ -72,7 +71,6 @@ summary_by_pop <- function(obj){
 #' @return
 #' @export
 #'
-#' @examples
 summary_by_loc <- function(obj){
   obj_list <- seppop(obj)
   #create workaround for hierfstat
@@ -147,7 +145,7 @@ summary_by_loc <- function(obj){
   )
 
   colnames(summary_by_locus) <- c("N", "na", "ne", "Ho", "uHe", "Fis", "PIC",
-                                  "PI", "PIsibs")
+                                  "PID", "PIDsibs")
 
   summary_by_locus <- rbind(summary_by_locus, colMeans(summary_by_locus))
   rownames(summary_by_locus) <-

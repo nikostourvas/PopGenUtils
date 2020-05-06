@@ -86,7 +86,7 @@ pid_calc <- function(obj){
 #' @import tibble
 #' @import ggplot2
 #' @importFrom magrittr %>%
-pid_permute <- function(obj, nrep){
+pid_permute <- function(obj, nrep=1000){
 
   pid_calc <- pid_calc(obj) # function within the function
 
@@ -105,10 +105,10 @@ pid_permute <- function(obj, nrep){
   pidsibs_df <- reshape2::melt(pidsibs)
   pidsibs_df$L1 <- factor(pidsibs_df$L1)
 
-  pid_merged <- cbind("pid"=pid_df[, 1], "pidsibs"=pidsibs_df)
+  pid_merged <- cbind("PID"=pid_df[, 1], "PIDsibs"=pidsibs_df)
   pid_merged <- pid_merged %>%
-    rename(pidsibs=pidsibs.value,
-           loci=pidsibs.L1)
+    rename(PIDsibs=PIDsibs.value,
+           loci=PIDsibs.L1)
 
   # make the df tidy!
   pid_merged <- pid_merged %>%
@@ -127,8 +127,8 @@ pid_permute <- function(obj, nrep){
                           nLoc(obj))
   stats <- add_row(ungroup(stats),
                    loci = nLoc(obj),
-                   pid = pid_calc[["pid_comb"]],
-                   pidsibs = pid_calc[["pidsibs_comb"]]
+                   PID = pid_calc[["pid_comb"]],
+                   PIDsibs = pid_calc[["pidsibs_comb"]]
   )
 
   # boxplot ggplot2
