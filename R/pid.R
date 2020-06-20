@@ -1,6 +1,6 @@
 #' Calculate Probability of Identity (PID) & PIDsibs
 #'
-#' @param obj a genind object
+#' @param obj a diploid genind object
 #'
 #' @return a list with four elements reporting
 #' PID by locus,
@@ -11,7 +11,8 @@
 #'
 #' @author Nikolaos Tourvas
 #' @description This function calculates PID & PIDsibs by locus, as well as the
-#' combined statistic for all loci
+#' combined statistic for all loci. The current implementation allows only for
+#' diploid data.
 #'
 #' @examples
 #' data(nancycats) # load the "nancycats" genind obj from package adegenet
@@ -66,7 +67,7 @@ pid_calc <- function(obj){
 #' Calculate Probability of Identity (PID) & PIDsibs for different
 #' combinations of loci
 #'
-#' @param obj a genind object
+#' @param obj a diploid genind object
 #' @param nrep the number of permutations to perform
 #'
 #' @return a list with three elements, reporting
