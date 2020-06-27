@@ -127,7 +127,7 @@ pid_permute <- function(obj, nrep=1000){
   levels(stats$loci) <- c(levels(stats$loci),
                           nLoc(obj))
   stats <- add_row(ungroup(stats),
-                   loci = nLoc(obj),
+                   loci = as.character(nLoc(obj)),
                    PID = pid_calc[["pid_comb"]],
                    PIDsibs = pid_calc[["pidsibs_comb"]]
   )
