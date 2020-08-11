@@ -7,6 +7,12 @@ What can this package do?
 - It can be used to create a GenAlEx formatted file or a genind object from multiple GeneMapper txt files  
 - It can also calculate Probability of Identity (PID) & PIDsibs, which are useful statistics in forensic DNA analysis.
 
+You can find more info on how to use the package by typing in the R console:
+
+```
+library(PopGenUtils)
+help(package = "PopGenUtils")
+```
 
 ## To install the development version of *PopGenUtils*
 
