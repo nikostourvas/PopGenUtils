@@ -1,36 +1,37 @@
-### bootstraping a df of a parameter to calc sd (bootstrap over loci)
-boot.sd.param <- function(x, nboot){
-n <- nrow(x)
-bootstrapsample <- list()
-for(i in 1:ncol(x)){
-        tmpdata = sample(x,n*nboot, replace=TRUE)
-        bootstrapsample[[i]] = matrix(tmpdata, nrow=n, ncol=nboot)
+#' Calculate the standard deviation of one or more parameters by bootstraping
+#'
+#' @param x a vector or matrix (with each column as one parameter)
+#' @param nboot number of bootstraps; default: 1000
+#'
+#' @return the sd of a vector, or a data.frame with the sd of each parameter
+#' in each row
+#' @export
+#'
+#' @author Nikolaos Tourvas
+#' @examples
+#' @import boot
+boot.param.sd <- function(x, nboot=1000){
+
+  if(is.vector(x) == TRUE){
+        boot.mean <- function(vec, i){
+          return(mean(vec[i]))
+        }
+    res <- boot(data = x,
+                statistic = boot.mean,
+                R = nboot)
+    return(sd(res$t))
+
+  } else {
+        boot.mean.df <- function(df, i){
+          df2 <- df[i,]
+          return(colMeans(df2))
+        }
+    res <- boot(data = x,
+                statistic = boot.mean.df,
+                R=nboot)
+    res <- apply(res$t, 2, sd)
+    res <- data.frame(sd = res)
+    rownames(res) <- colnames(x)
+    return(res)
+  }
 }
-
-bsmeans <- list()
-for(i in 1:ncol(x)){
-        bsmeans[[i]] <- colMeans(bootstrapsample[[i]])
-}
-
-# compute sd
-sdev <- list()
-for(i in 1:ncol(x)){
-        sdev[[i]] <- sd(bsmeans[[i]])
-}
-
-sdev <- do.call(rbind.data.frame, sdev)
-colnames(sdev) <- "sd"
-rownames(sdev) <- colnames(x)
-return(sdev)
-
-}
-
-# compute CIs from bootstraping
-# compute d*
-# deltastar <- list()
-# d <- list()
-# for(i in 1:ncol(x)){
-#         deltastar[[i]] <- bsmeans[[i]] - mean(x[[i]])
-#         d[[i]] <- quantile(deltastar[[i]], c(0.025, 0.975))
-# }
-
