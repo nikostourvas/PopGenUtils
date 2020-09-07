@@ -1,5 +1,9 @@
 # *PopGenUtils*
 
+<!-- badges: start -->
+  [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+  <!-- badges: end -->
+  
 The *PopGenUtils* package is developed as a way to document a collection of helper functions for the analysis of population genetics data. Currently at ALPHA stage.
 
 What can this package do?

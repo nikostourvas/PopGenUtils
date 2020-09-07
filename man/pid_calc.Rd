@@ -7,7 +7,7 @@
 pid_calc(obj)
 }
 \arguments{
-\item{obj}{a genind object}
+\item{obj}{a diploid genind object}
 }
 \value{
 a list with four elements reporting
@@ -18,7 +18,8 @@ PIDsibs combined for all loci
 }
 \description{
 This function calculates PID & PIDsibs by locus, as well as the
-combined statistic for all loci
+combined statistic for all loci. The current implementation allows only for
+diploid data.
 }
 \examples{
 data(nancycats) # load the "nancycats" genind obj from package adegenet

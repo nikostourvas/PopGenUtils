@@ -5,10 +5,10 @@
 \title{Calculate Probability of Identity (PID) & PIDsibs for different
 combinations of loci}
 \usage{
-pid_permute(obj, nrep)
+pid_permute(obj, nrep = 1000)
 }
 \arguments{
-\item{obj}{a genind object}
+\item{obj}{a diploid genind object}
 
 \item{nrep}{the number of permutations to perform}
 }
