@@ -11,7 +11,8 @@
 #'
 #' @author Nikolaos Tourvas
 #' @description This function allows the user to quickly convert multiple txt
-#' files of SSR genotyping data from GeneMapper v4.1 to a csv or a data.frame.
+#' files of microsatellite genotyping data from GeneMapper to a csv or a data.frame.
+#' It was tested with txt files produced by GeneMapper v4.0 up to v6.0.
 #'
 #' @examples
 #' \dontrun{

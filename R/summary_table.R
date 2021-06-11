@@ -1,4 +1,4 @@
-#' Produce a summary statistics table
+#' Experimental function: Produce a summary statistics table
 #'
 #' @param obj a genind object
 #'
@@ -6,8 +6,9 @@
 #' @export
 #'
 #' @author Nikolaos Tourvas
-#' @describeIn This function allows the user to produce to summary table
-#' similar to the one produced by the software GenAlEx.
+#' @description This function allows the user to produce to summary table
+#' similar to the one produced by the software GenAlEx for diploid codominant
+#' data. WARNING: This function is still experimental.
 #'
 #' @import poppr
 #' @import hierfstat
@@ -64,7 +65,7 @@ summary_by_pop <- function(obj){
 
 
 
-#' Produce summary statistics by locus
+#' Experimental function: Produce summary statistics by locus
 #'
 #' @param obj
 #'

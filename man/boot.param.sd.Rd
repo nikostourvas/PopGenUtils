@@ -2,7 +2,8 @@
 % Please edit documentation in R/bootstrap.R
 \name{boot.param.sd}
 \alias{boot.param.sd}
-\title{Calculate the standard deviation of one or more parameters by bootstraping}
+\title{Experimental function: Calculate the standard deviation of one or more
+parameters by bootstraping}
 \usage{
 boot.param.sd(x, nboot = 1000)
 }
@@ -16,7 +17,8 @@ the sd of a vector, or a data.frame with the sd of each parameter
 in each row
 }
 \description{
-Calculate the standard deviation of one or more parameters by bootstraping
+Experimental function: Calculate the standard deviation of one or more
+parameters by bootstraping
 }
 \author{
 Nikolaos Tourvas

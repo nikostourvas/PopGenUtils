@@ -1,4 +1,5 @@
-#' Calculate the standard deviation of one or more parameters by bootstraping
+#' Experimental function: Calculate the standard deviation of one or more
+#' parameters by bootstraping
 #'
 #' @param x a vector or matrix (with each column as one parameter)
 #' @param nboot number of bootstraps; default: 1000
@@ -8,7 +9,6 @@
 #' @export
 #'
 #' @author Nikolaos Tourvas
-#' @examples
 #' @import boot
 boot.param.sd <- function(x, nboot=1000){
 
