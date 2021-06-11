@@ -4,12 +4,17 @@
   [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
   <!-- badges: end -->
   
-The *PopGenUtils* package is developed as a way to document a collection of helper functions for the analysis of population genetics data. Currently at ALPHA stage.
+The *PopGenUtils* package is developed as a way to document a collection of 
+helper functions for the analysis of population genetics data.
 
 What can this package do?
 
-- It can be used to create a GenAlEx formatted file or a genind object from multiple GeneMapper txt files  
-- It can also calculate Probability of Identity (PID) & PIDsibs, which are useful statistics in forensic DNA analysis.
+- It can gather exported genotyping data from GeneMapper and generate 
+a csv file suitable as input for GenAlEx or a genind object.
+- It can calculate Probability of Identity (PID) & PIDsibs, which are 
+useful statistics in forensic DNA analysis.
+- It provides a wrapper function for the calculation of Polymorphic Information 
+Content via the package polysat for genind objects.
 
 You can find more info on how to use the package by typing in the R console:
 
@@ -20,7 +25,8 @@ help(package = "PopGenUtils")
 
 ## To install the development version of *PopGenUtils*
 
-You will need the package *devtools*  to be able to install the devel version of *PopGenUtils*. To install *devtools*:
+You will need the package *devtools*  to be able to install the devel version 
+of *PopGenUtils*. To install *devtools*:
 
 ```
 install.packages("devtools")
