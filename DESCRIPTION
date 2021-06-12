@@ -8,6 +8,7 @@ Description: This package can be used to create a GenAlEx formatted file or a ge
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Remotes: github::konopinski/Shannon
 Imports: 
     dplyr,
     tidyr,
@@ -19,5 +20,6 @@ Imports:
     pegas,
     hierfstat,
     pegas,
-    boot
+    boot,
+    ShannonGen
 RoxygenNote: 7.1.1
