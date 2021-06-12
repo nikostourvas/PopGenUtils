@@ -3,11 +3,11 @@
 ###### basic statistics and their SEs
 table_out <- function(obj, variable, name){
 
-        means <- colMeans(variable, na.rm=T)
-        out <- c(means, mean(variable, na.rm = T))
+        means <- colMeans(variable, na.rm = TRUE)
+        out <- c(means, mean(variable, na.rm = TRUE))
 
         out <- as.data.frame(out)
-        Pops <- c(popNames(obj), "Total")
+        Pops <- c(popNames(obj), "Mean")
         rownames(out) <- Pops
         colnames(out) <- name
 
@@ -33,7 +33,7 @@ poppr2hierfstat_out <- function(obj, variable){
 
         stats_poppr <- list()
         for(i in 1: length(obj_list)){
-                stats_poppr[[i]] <- locus_table(obj_list[[i]], information = F)
+                stats_poppr[[i]] <- locus_table(obj_list[[i]], information = FALSE)
         }
 
         table_out <- list()
