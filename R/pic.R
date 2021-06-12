@@ -13,38 +13,38 @@
 #' Content or PIC from a genind object. Check PIC help page under polysat
 #' package for references.
 #' @import poppr
+#' @import pegas
 #' @import polysat
 pic_calc <- function(obj, ploidy = 2){
-  # commented out lies a previous attempt to create genambig objects
+  # create genambig objects
   # without the need to import poppr
-  # obj_df <- as.loci(obj)
-  # popinfo <- as.numeric(obj_df$population)
-  # obj_df <- obj_df[ ,-1]
-  # obj_df$Sample.Name <- rownames(obj_df)
-  #
-  # # make it tidy for polysat
-  # obj_df_long <- suppressWarnings(
-  #   gather(obj_df, Marker, Alleles, -Sample.Name) )
-  #
-  # obj_df_long <- separate(obj_df_long, col=Alleles, sep = "/",
-  #                         into = c("Allele.1", "Allele.2"))
-  #
-  # obj_df_long$Allele.1[is.na(obj_df_long$Allele.1)] <- -9
-  #
-  # write.table(obj_df_long, file = "polysat_input.txt",
-  #             row.names = F, sep = "\t", na = "")
-  #
-  # obj_genambig <- read.GeneMapper("polysat_input.txt")
-  # invisible(file.remove("polysat_input.txt"))
-  #
-  # # Create genambig object
-  # PopInfo(obj_genambig) <- popinfo
-  #   # hardcoded diploid
-  # Ploidies(obj_genambig) <- rep(2, nInd(obj))
+  obj_df <- as.loci(obj)
+  popinfo <- as.numeric(obj_df$population)
+  obj_df <- obj_df[ ,-1]
+  obj_df$Sample.Name <- rownames(obj_df)
+
+  # make it tidy for polysat
+  obj_df_long <- suppressWarnings(
+    gather(obj_df, Marker, Alleles, -Sample.Name) )
+
+  obj_df_long <- separate(obj_df_long, col=Alleles, sep = "/",
+                          into = c("Allele.1", "Allele.2"))
+
+  obj_df_long$Allele.1[is.na(obj_df_long$Allele.1)] <- -9
+
+  write.table(obj_df_long, file = "polysat_input.txt",
+              row.names = F, sep = "\t", na = "")
+
+  obj_genambig <- read.GeneMapper("polysat_input.txt")
+  invisible(file.remove("polysat_input.txt"))
+
+  # Create genambig object
+  PopInfo(obj_genambig) <- popinfo
+  Ploidies(obj_genambig) <- rep(ploidy, nInd(obj))
 
   # as.genambig is imported from poppr
-  obj_genambig <- as.genambig(obj)
-  obj_genambig@Ploidies@pld[is.na(obj_genambig@Ploidies@pld)] <- ploidy
+  # obj_genambig <- as.genambig(obj)
+  # obj_genambig@Ploidies@pld[is.na(obj_genambig@Ploidies@pld)] <- ploidy
 
   # calculate pic
   freq_obj <- simpleFreq(obj_genambig)
