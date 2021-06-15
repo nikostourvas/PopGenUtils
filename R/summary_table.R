@@ -50,18 +50,18 @@ summary_by_pop <- function(obj) {
   I <- table_out(obj, as.matrix(I_by_locus$Shannon_1949), "I")
 
   ## Shannon's I Zahl
-  I_z_by_locus <- ShannonGen(obj, estimator = "z")
-  I_z <- table_out(obj, as.matrix(I_z_by_locus$Zahl_1977), "I_z")
+  Iz_by_locus <- ShannonGen(obj, estimator = "z")
+  Iz <- table_out(obj, as.matrix(Iz_by_locus$Zahl_1977), "Iz")
 
   ## Fis
   Fis_by_locus <- basic.stats(obj)[["Fis"]]
   Fis <- table_out(obj, Fis_by_locus, "Fis")
 
   # save only the values - not their SEs
-  summary_df <- cbind(N, na, ne_Hs, I, I_z, Ho, uHe, Fis)
+  summary_df <- cbind(N, na, ne_Hs, I, Iz, Ho, uHe, Fis)
   rownames(summary_df) <- c(popNames(obj), "Mean")
   colnames(summary_df) <- c("N", "na", "na_SE", "ne", "ne_SE",
-                            "I", "I_SE", "I_z", "I_z_SE",
+                            "I", "I_SE", "Iz", "Iz_SE",
                             "Ho", "Ho_SE", "uHe", "uHe_SE", "Fis", "Fis_SE")
   summary_df <- round(as.data.frame(summary_df), digits = 3)
 
@@ -108,14 +108,11 @@ summary_by_loc <- function(obj) {
   I_by_locus <- ShannonGen(obj, estimator = "sh")
 
   ## Shannon's I Zahl
-  I_z_by_locus <- ShannonGen(obj, estimator = "z")
+  Iz_by_locus <- ShannonGen(obj, estimator = "z")
 
   ## Fis
   Fis_by_locus <- basic_res$perloc$Fis
-  # Fis <- table_out(obj, Fis_by_locus, "Fis") ## better use boot.ppfis
-
-  ## PIC
-  PIC <- pic_calc(obj)
+  # Fis <- table_out(obj, Fis_by_locus, "Fis")
 
   ## PID
   pid <- pid_calc(obj)
@@ -128,18 +125,17 @@ summary_by_loc <- function(obj) {
           rowMeans(na_by_locus, na.rm = T),
           ne_by_locus_Hs,
           rowMeans(I_by_locus$Shannon_1949, na.rm = T),
-          rowMeans(I_z_by_locus$Zahl_1977, na.rm = T),
+          rowMeans(Iz_by_locus$Zahl_1977, na.rm = T),
           Ho_by_locus,
           rowMeans(uHe_by_locus, na.rm = T),
           Fis_by_locus,
-          PIC[-nrow(PIC), ncol(PIC)],
           pid,
           pidsibs
     )
   )
 
   colnames(summary_by_locus) <- c(
-    "N", "na", "ne", "I", "I_z", "Ho", "uHe", "Fis", "PIC", "PID", "PIDsibs"
+    "N", "na", "ne", "I", "Iz", "Ho", "uHe", "Fis", "PID", "PIDsibs"
   )
 
   summary_by_locus <- rbind(summary_by_locus, colMeans(summary_by_locus))
