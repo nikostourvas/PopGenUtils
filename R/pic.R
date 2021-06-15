@@ -1,7 +1,9 @@
 #' Polymorphic Information Content calculation for genind objects
 #'
 #' @param obj a codominant genind object
-#' @param ploidy The ploidy of the data
+#' @param ploidy Integer. The ploidy of the data.
+#' @param bypop Boolean, indicating whether to calculate PIC for each population
+#'  and overall or only overall.
 #'
 #' @return a data.frame with PIC values (per locus & mean) for each population
 #' and overall
@@ -15,7 +17,7 @@
 #' @import poppr
 #' @import pegas
 #' @import polysat
-pic_calc <- function(obj, ploidy = 2){
+pic_calc <- function(obj, ploidy = 2, bypop = FALSE){
   # create genambig objects
   # without the need to import poppr
   obj_df <- as.loci(obj)
@@ -48,7 +50,7 @@ pic_calc <- function(obj, ploidy = 2){
 
   # calculate pic
   freq_obj <- simpleFreq(obj_genambig)
-  pic_obj <- PIC(freq_obj, overall = TRUE)
+  pic_obj <- PIC(freq_obj, overall = TRUE, bypop = bypop)
 
   pic_obj <- as.data.frame(pic_obj)
   pic_obj_mean <- rowMeans(pic_obj)
