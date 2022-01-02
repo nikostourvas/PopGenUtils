@@ -23,8 +23,10 @@ Calculate Probability of Identity (PID) & PIDsibs for different
 combinations of loci
 }
 \examples{
+\dontrun{
 data(nancycats) # load the "nancycats" genind obj from package adegenet
 pid_perm <- pid_permute(obj = nancycats)
+}
 
 }
 \author{

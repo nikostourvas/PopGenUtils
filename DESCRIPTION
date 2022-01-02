@@ -20,5 +20,7 @@ Imports:
     pegas,
     hierfstat,
     boot,
-    ShannonGen
+    ShannonGen,
+    polysat,
+    tibble
 RoxygenNote: 7.1.1

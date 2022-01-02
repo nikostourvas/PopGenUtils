@@ -15,9 +15,10 @@
 #' diploid data.
 #'
 #' @examples
+#' \dontrun{
 #' data(nancycats) # load the "nancycats" genind obj from package adegenet
 #' pid <- pid_calc(obj = nancycats)
-#'
+#' }
 #' @import adegenet
 #' @import dplyr
 #' @import tidyr
@@ -78,8 +79,10 @@ pid_calc <- function(obj){
 #'
 #' @author Nikolaos Tourvas
 #' @examples
+#' \dontrun{
 #' data(nancycats) # load the "nancycats" genind obj from package adegenet
 #' pid_perm <- pid_permute(obj = nancycats)
+#' }
 #'
 #' @import adegenet
 #' @import dplyr

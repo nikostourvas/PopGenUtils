@@ -22,9 +22,10 @@ combined statistic for all loci. The current implementation allows only for
 diploid data.
 }
 \examples{
+\dontrun{
 data(nancycats) # load the "nancycats" genind obj from package adegenet
 pid <- pid_calc(obj = nancycats)
-
+}
 }
 \author{
 Nikolaos Tourvas

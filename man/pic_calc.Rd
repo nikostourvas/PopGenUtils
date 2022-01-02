@@ -4,12 +4,15 @@
 \alias{pic_calc}
 \title{Polymorphic Information Content calculation for genind objects}
 \usage{
-pic_calc(obj, ploidy = 2)
+pic_calc(obj, ploidy = 2, bypop = FALSE)
 }
 \arguments{
 \item{obj}{a codominant genind object}
 
-\item{ploidy}{The ploidy of the data}
+\item{ploidy}{Integer. The ploidy of the data.}
+
+\item{bypop}{Boolean, indicating whether to calculate PIC for each population
+and overall or only overall.}
 }
 \value{
 a data.frame with PIC values (per locus & mean) for each population
