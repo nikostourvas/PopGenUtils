@@ -9,10 +9,10 @@ helper functions for the analysis of population genetics data.
 
 What can this package do?
 
-- It can gather exported genotyping data from GeneMapper and generate 
-a csv file suitable as input for GenAlEx or a genind object.
+- It can gather exported genotyping data from GeneMapper software and generate 
+input files for downstream analysis software such as GenAlEx or adegenet.
 - It can calculate Probability of Identity (PID) & PIDsibs, which are 
-useful statistics in forensic DNA analysis.
+useful statistics in forensic DNA analysis and in cultivar identification.
 - It provides a wrapper function for the calculation of Polymorphic Information 
 Content via the package polysat for genind objects.
 
