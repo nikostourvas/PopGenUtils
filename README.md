@@ -15,6 +15,7 @@ input files for downstream analysis software such as GenAlEx or adegenet.
 useful statistics in forensic DNA analysis and in cultivar identification.
 - It provides a wrapper function for the calculation of Polymorphic Information 
 Content via the package polysat for genind objects.
+- It provides an easy way to create a TreeMix input file for microsatellite data.
 
 You can find more info on how to use the package by typing in the R console:
 
