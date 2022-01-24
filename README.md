@@ -1,8 +1,4 @@
 # *PopGenUtils*
-
-<!-- badges: start -->
-  [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-  <!-- badges: end -->
   
 The *PopGenUtils* package is developed as a way to document a collection of 
 helper functions for the analysis of population genetics data.
@@ -26,14 +22,13 @@ help(package = "PopGenUtils")
 
 ## To install the development version of *PopGenUtils*
 
-You will need the package *devtools*  to be able to install the devel version 
-of *PopGenUtils*. To install *devtools*:
+You will need the package *devtools*  to be able to install *PopGenUtils*. To install *devtools*:
 
 ```
 install.packages("devtools")
 ```
 
-To install *PopGenUtils* devel:
+To install *PopGenUtils*:
 
 ```
 library(devtools)
