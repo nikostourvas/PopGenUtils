@@ -46,11 +46,11 @@ summary_by_pop <- function(obj) {
   Ho <- table_out(obj, Ho_by_locus, "Ho")
 
   ## Shannon's I
-  I_by_locus <- ShannonGen(obj, estimator = "sh")
+  I_by_locus <- Shannon.gen(obj, estimator = "sh")
   I <- table_out(obj, as.matrix(I_by_locus$Shannon_1949), "I")
 
   ## Shannon's I Zahl
-  Iz_by_locus <- ShannonGen(obj, estimator = "z")
+  Iz_by_locus <- Shannon.gen(obj, estimator = "z")
   Iz <- table_out(obj, as.matrix(Iz_by_locus$Zahl_1977), "Iz")
 
   ## Fis
@@ -105,10 +105,10 @@ summary_by_loc <- function(obj) {
   # Ho <- table_out(obj, Ho_by_locus, "Ho")
 
   ## Shannon's I
-  I_by_locus <- ShannonGen(obj, estimator = "sh")
+  I_by_locus <- Shannon.gen(obj, estimator = "sh")
 
   ## Shannon's I Zahl
-  Iz_by_locus <- ShannonGen(obj, estimator = "z")
+  Iz_by_locus <- Shannon.gen(obj, estimator = "z")
 
   ## Fis
   Fis_by_locus <- basic_res$perloc$Fis

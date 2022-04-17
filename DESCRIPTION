@@ -1,14 +1,15 @@
 Package: PopGenUtils
 Type: Package
 Title: A collection of useful functions to deal with genetic data in R
-Version: 0.1.7
+Version: 0.1.8
 Author: Nikolaos Tourvas
 Maintainer: Nikolaos Tourvas <nikostourvas@gmail.com>
 Description: This package can be used to create a GenAlEx formatted file or a genind object from multiple GeneMapper txt files. It can also be used to calculate Probability of Identity (PID) & PIDsibs, which are useful statistics in forensic DNA analysis.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Remotes: github::konopinski/Shannon
+Remotes: 
+    konopinski/Shannon
 Imports: 
     dplyr,
     tidyr,
@@ -20,7 +21,7 @@ Imports:
     pegas,
     hierfstat,
     boot,
-    ShannonGen,
+    ShannonGen (>= 0.0.2),
     polysat,
     tibble
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
